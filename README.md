@@ -6,35 +6,35 @@ vagrant up
 
 Таблица маршрутизации на R1:
 
-K>* 0.0.0.0/0 via 10.0.2.2, eth0
-C>* 10.0.2.0/24 is directly connected, eth0
-O   10.100.1.0/24 [110/10] is directly connected, eth1, 00:06:14
-C>* 10.100.1.0/24 is directly connected, eth1
-O   10.100.2.0/24 [110/30] via 10.100.1.2, eth1, 00:06:07
-C>* 10.100.2.0/24 is directly connected, eth2
-O>* 10.100.3.0/24 [110/20] via 10.100.1.2, eth1, 00:06:07
-C>* 127.0.0.0/8 is directly connected, lo
+    K>* 0.0.0.0/0 via 10.0.2.2, eth0
+    C>* 10.0.2.0/24 is directly connected, eth0
+    O   10.100.1.0/24 [110/10] is directly connected, eth1, 00:06:14
+    C>* 10.100.1.0/24 is directly connected, eth1
+    O   10.100.2.0/24 [110/30] via 10.100.1.2, eth1, 00:06:07
+    C>* 10.100.2.0/24 is directly connected, eth2
+    O>* 10.100.3.0/24 [110/20] via 10.100.1.2, eth1, 00:06:07
+    C>* 127.0.0.0/8 is directly connected, lo
 Таблица маршрутизации на R2:
 
-K>* 0.0.0.0/0 via 10.0.2.2, eth0
-C>* 10.0.2.0/24 is directly connected, eth0
-O   10.100.1.0/24 [110/20] is directly connected, eth1, 00:02:10
-C>* 10.100.1.0/24 is directly connected, eth1
-O   10.100.2.0/24 [110/20] via 10.100.3.1, eth2, 00:01:55
-S>* 10.100.2.0/24 [1/0] via 10.100.1.1, eth1
-O   10.100.3.0/24 [110/10] is directly connected, eth2, 00:02:10
-C>* 10.100.3.0/24 is directly connected, eth2
-C>* 127.0.0.0/8 is directly connected, lo
+    K>* 0.0.0.0/0 via 10.0.2.2, eth0
+    C>* 10.0.2.0/24 is directly connected, eth0
+    O   10.100.1.0/24 [110/20] is directly connected, eth1, 00:02:10
+    C>* 10.100.1.0/24 is directly connected, eth1
+    O   10.100.2.0/24 [110/20] via 10.100.3.1, eth2, 00:01:55
+    S>* 10.100.2.0/24 [1/0] via 10.100.1.1, eth1
+    O   10.100.3.0/24 [110/10] is directly connected, eth2, 00:02:10
+    C>* 10.100.3.0/24 is directly connected, eth2
+    C>* 127.0.0.0/8 is directly connected, lo
 Таблица маршрутизации на R3:
 
-K>* 0.0.0.0/0 via 10.0.2.2, eth0
-C>* 10.0.2.0/24 is directly connected, eth0
-O>* 10.100.1.0/24 [110/20] via 10.100.2.1, eth1, 00:06:20
-O   10.100.2.0/24 [110/10] is directly connected, eth1, 00:06:50
-C>* 10.100.2.0/24 is directly connected, eth1
-O   10.100.3.0/24 [110/30] via 10.100.2.1, eth1, 00:06:20
-C>* 10.100.3.0/24 is directly connected, eth2
-C>* 127.0.0.0/8 is directly connected, lo
+    K>* 0.0.0.0/0 via 10.0.2.2, eth0
+    C>* 10.0.2.0/24 is directly connected, eth0
+    O>* 10.100.1.0/24 [110/20] via 10.100.2.1, eth1, 00:06:20
+    O   10.100.2.0/24 [110/10] is directly connected, eth1, 00:06:50
+    C>* 10.100.2.0/24 is directly connected, eth1
+    O   10.100.3.0/24 [110/30] via 10.100.2.1, eth1, 00:06:20
+    C>* 10.100.3.0/24 is directly connected, eth2
+    C>* 127.0.0.0/8 is directly connected, lo
 На маршрутизаторах office1Router & office2Route роутером по умолчанию является centralRouter, остальные маршруты прописывать нет необходимости т.к. о них знает centralRouter
 
 Трафик от R1 до R3 (192.168.3.1) идет через R2 и возвращается напрямую от R3:
